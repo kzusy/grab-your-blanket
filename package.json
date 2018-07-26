@@ -1,0 +1,16 @@
+{
+  "name": "grab-your-blanket",
+  "version": "0.1.0",
+  "description": "App for notifying google calendar event attendees about the temperature (conditions) in the meeting room",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kzusy/grab-your-blanket.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kzusy/grab-your-blanket/issues"
+  },
+  "homepage": "https://github.com/kzusy/grab-your-blanket#readme"
+}
