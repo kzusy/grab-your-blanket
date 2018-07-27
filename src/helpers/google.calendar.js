@@ -68,7 +68,19 @@ function getAccessToken(authClient) {
 	});
 }
 
-function getMessageForTemp(temp) {
+function getSummaryMessageForTemp(temp) {
+	if (temp < 70) {
+		return `(${formatTemp(temp)} - GYB!)`;
+	}
+
+	return `(${formatTemp(temp)})`;
+}
+
+function getSummary(summary, temp) {
+	return `${summary} ${getSummaryMessageForTemp(temp)}`;
+}
+
+function getDescMessageForTemp(temp) {
 	if (temp < 70) {
 		return 'Grab your blanket!';
 	}
@@ -91,7 +103,7 @@ function getDescription(description, temp) {
 		description += '\n';
 	}
 
-	return `${description}${formatTemp(temp)} - ${getMessageForTemp(temp)}`;
+	return `${description}${formatTemp(temp)} - ${getDescMessageForTemp(temp)}`;
 }
 
 class GoogleCalendar {
@@ -178,7 +190,7 @@ class GoogleCalendar {
 				calendarId: 'primary',
 				eventId: event.id,
 				resource: {
-					summary: `${event.summary} - ${formatTemp(temp)}`,
+					summary: getSummary(event.summary, temp),
 					description: getDescription(event.description, temp)
 				}
 			}, (err, res) => {
