@@ -1,17 +1,11 @@
 module.exports = {
-	/**
-	 * The device id for the temperature sensor that we're using
-	 * @type {String}
-	 */
-	sensorDeviceId: process.env.SENSOR_DEVICE_ID,
+	tempUrl: process.env.TEMP_URI,
 
-	/**
-	 * The conference room id for google calendar
-	 * @type {String}
-	 */
-	conferenceRoom: {
-		id: process.env.CONFERENCE_ROOM_ID
-	},
+	timeZone: 'America/New_York',
 
-	timeZone: 'America/New_York'
+	googleCredentials: {
+    clientId: process.env.GOOGLE_CLIENT_ID,
+  	clientSecret:process.env.GOOGLE_SECRET_ID,
+    redirectUri: process.env.GOOGLE_REDIRECT_URI,
+	}
 };
