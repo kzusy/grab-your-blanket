@@ -100,7 +100,7 @@ function getDescription(description, temp) {
 	description = description || '';
 
 	if (description) {
-		description += '\n';
+		description += '\n\n';
 	}
 
 	return `${description}${formatTemp(temp)} - ${getDescMessageForTemp(temp)}`;
